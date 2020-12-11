@@ -131,5 +131,9 @@ func (rd *ReactorDelivery) GetArch() string {
 
 // GetRepoName of the project's repository. If Delivery is not valid, an empty string returned.
 func (rd *ReactorDelivery) GetRepoName() string {
-	return rd.getContentString("repo")
+	repo := rd.getContentString("repo")
+	if repo == "" {
+		repo = rd.getContentString("repository")
+	}
+	return repo
 }

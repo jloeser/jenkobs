@@ -55,6 +55,7 @@ func (shact *ShellAction) formatCommand(message *ReactorDelivery) []string {
 			"{package}", message.GetPackageName(),
 			"{arch}", message.GetArch(),
 			"{repo}", message.GetRepoName(),
+			"{repository}", message.GetRepoName(),
 		)
 		for _, p := range cmdTpl.([]string) {
 			out = append(out, fmt.Replace(p))
